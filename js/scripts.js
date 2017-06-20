@@ -14,6 +14,17 @@ var num = 1;
  }
 }
 
+var palindrome = function (word){
+
+
+  if (word === word.split("").reverse().join("")){
+    return ("True");
+  }
+  else {
+    return ("False");
+  }
+
+}
 $(document).ready(function() {
   $("form#leap-year").submit(function(event) {
     event.preventDefault();
@@ -34,5 +45,12 @@ $(document).ready(function() {
       var result = factorial(number);
       $('#product').text(result);
       $('#product').show();
+    });
+    $("form#palindrome").submit(function(event) {
+      event.preventDefault();
+      var word = $("input#word").val();
+      var output = palindrome(word);
+      $('#output').text(output);
+
     });
 });
